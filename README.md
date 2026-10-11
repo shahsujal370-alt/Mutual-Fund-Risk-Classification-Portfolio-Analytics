@@ -92,12 +92,12 @@ The included run's metrics are in `outputs/model_metrics.json`. With the saved r
 ## Limitations and responsible interpretation
 
 - The data is a static snapshot, not a live market feed.
-- Source `risk_level` is mapped to the target classes, so this is a label-reproduction classification exercise.
+- Source risk_level is mapped to the target classes, so this is a label-reproduction classification exercise.
 - Historical returns and ratings are not guarantees of future performance.
 - The recommendation score is a simple ranking proxy and does not account for investor goals, time horizon, taxes, liquidity, costs, or suitability.
 - The original notebook/report are retained as project materials; use their results only after reviewing and rerunning the relevant cells.
 
-## Resume bullets (use only for work you have actually run and verified)
+## Bullets 
 
 - Built a Python data-preparation workflow for 814 mutual fund records, including numeric conversion, duplicate handling, missing-value treatment, and reporting exports.
 - Trained and evaluated an XGBoost model to reproduce source-defined Low/Medium/High risk categories, reaching 88.96% test accuracy in the included run.
