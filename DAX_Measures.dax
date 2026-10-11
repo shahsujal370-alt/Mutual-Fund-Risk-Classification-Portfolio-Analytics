@@ -1,0 +1,24 @@
+-- Create these measures in Power BI after connecting to dbo.vw_FundDashboard or importing mutual_funds_clean.csv.
+Total Funds = DISTINCTCOUNT(MutualFund[scheme_name])
+
+Average 1Y Return = AVERAGE(MutualFund[returns_1yr])
+
+Average 3Y Return = AVERAGE(MutualFund[returns_3yr])
+
+Average 5Y Return = AVERAGE(MutualFund[returns_5yr])
+
+Average Volatility = AVERAGE(MutualFund[sd])
+
+Average Sharpe Ratio = AVERAGE(MutualFund[sharpe])
+
+Average Fund Rating = AVERAGE(MutualFund[rating])
+
+High Risk Funds = CALCULATE([Total Funds], MutualFund[risk_category] = "High")
+
+Medium Risk Funds = CALCULATE([Total Funds], MutualFund[risk_category] = "Medium")
+
+Low Risk Funds = CALCULATE([Total Funds], MutualFund[risk_category] = "Low")
+
+High Risk Fund % = DIVIDE([High Risk Funds], [Total Funds], 0)
+
+Average Expense Ratio = AVERAGE(MutualFund[expense_ratio])
