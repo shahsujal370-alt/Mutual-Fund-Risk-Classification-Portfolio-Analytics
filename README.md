@@ -4,7 +4,7 @@
 
 An end-to-end portfolio project built from a dataset of 814 mutual funds. It combines data cleaning and quality checks, supervised risk-category classification, unsupervised clustering, risk-profile fund screening, SQL reporting assets, and a Power BI dashboard specification.
 
-> **Transparency note:** SQL scripts and Power BI assets are included for local execution. Do not claim the SQL Server layer or a `.pbix` dashboard is deployed until you have run the SQL scripts and built/saved the report in Power BI Desktop. The risk labels are derived from the source dataset's `risk_level`; model scores measure reproduction of those labels, not independent future-risk prediction.
+> Transparency note: SQL scripts and Power BI assets are included for local execution. Do not claim the SQL Server layer or a `.pbix` dashboard is deployed until you have run the SQL scripts and built/saved the report in Power BI Desktop. The risk labels are derived from the source dataset's `risk_level`; model scores measure reproduction of those labels, not independent future-risk prediction.
 
 ## Project features
 
@@ -39,30 +39,6 @@ MutualFund-ML-Project/
 └── README.md
 ```
 
-## Run the Python pipeline (Windows)
-
-1. Install Python 3.10 or later.
-2. Open PowerShell in this project folder.
-3. Create and activate a virtual environment:
-
-   ```powershell
-   py -m venv .venv
-   .\.venv\Scripts\Activate.ps1
-   ```
-
-4. Install dependencies:
-
-   ```powershell
-   python -m pip install -r requirements.txt
-   ```
-
-5. Run the pipeline:
-
-   ```powershell
-   python src/run_pipeline.py
-   ```
-
-Generated files are saved under `outputs/` and the trained model under `models/`.
 
 ## SQL Server setup
 
@@ -103,5 +79,3 @@ The included run's metrics are in `outputs/model_metrics.json`. With the saved r
 - Trained and evaluated an XGBoost model to reproduce source-defined Low/Medium/High risk categories, reaching 88.96% test accuracy in the included run.
 - Applied K-Means clustering and PCA to explore fund segments and generated risk-profile shortlists using historical 3-year returns and ratings.
 - Prepared SQL Server schema, analytical queries, reusable views, data-quality checks, and Power BI DAX/report specifications for fund analytics.
-
-Only say that you **implemented SQL Server reporting** or **built a Power BI dashboard** after executing the scripts and saving the `.pbix` report yourself.
